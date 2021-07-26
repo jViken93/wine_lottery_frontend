@@ -28,6 +28,7 @@ const Particpate = () => {
 
     return (
         <Container>
+        <h1>Påmelding til vin lotteriet</h1>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label for="exampleInputEmail1">Full name</Form.Label>
@@ -70,8 +71,8 @@ const Particpate = () => {
                 />
             </Form.Group>
             <br />
-            {!isPending && <Button variant="primary" type="submit"> Submit</Button>}
-            {isPending && <Button variant="primary" type="submit" disabled> Submiting...</Button>}
+            {!isPending && <Button variant="primary" type="submit"> Send</Button>}
+            {isPending && <Button variant="primary" type="submit" disabled> Sender...</Button>}
         </Form>
         </Container>
     )
