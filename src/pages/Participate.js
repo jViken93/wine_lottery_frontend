@@ -70,6 +70,7 @@ const Particpate = () => {
                     onChange={(e) => setTickets_to_buy(e.target.value)}
                 />
             </Form.Group>
+            <br />
             {!isPending && <Button variant="primary" type="submit"> Submit</Button>}
             {isPending && <Button variant="primary" type="submit" disabled> Submiting...</Button>}
         </Form>
