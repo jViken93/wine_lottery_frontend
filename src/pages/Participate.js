@@ -3,12 +3,14 @@ import Button from 'react-bootstrap/Button';
 import Form  from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container';
 
+/**Participate Class for submiting to the API */
 const Particpate = () => {
     const [full_name, setFull_name] = useState('')
     const [email, setEmail] = useState('')
     const [tickets_to_buy, setTickets_to_buy] = useState('')
     const [isPending, setIsPending] = useState(false)
 
+    /**Function that sends a POST request to the api */
     const handleSubmit = (e) => {
         e.preventDefault()
         const participant = { full_name, email, tickets_to_buy }
@@ -27,6 +29,7 @@ const Particpate = () => {
     }
 
     return (
+        /**A form were you can add participants */
         <Container>
         <h1>Påmelding til vin lotteriet</h1>
         <Form onSubmit={handleSubmit}>

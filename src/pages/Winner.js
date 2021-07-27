@@ -3,6 +3,8 @@ import Table  from "react-bootstrap/Table";
 import Container  from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
+/**Class winner were you can draw a winner, and see the winners displayed */
+
 const Winner = () => {
     const [data, setData] = useState('');
     const [winners, setWinners] = useState([])
@@ -27,6 +29,7 @@ const Winner = () => {
       },[])
     
     return (
+        /**Draw winner function, and a table display of the winners of the lottery */
         <Container>
             <div>
                 <h2>Trekk en vinner</h2>

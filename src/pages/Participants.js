@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react"
 import Table  from "react-bootstrap/Table";
 import Container  from "react-bootstrap/Container";
 
+/**Participants class to get all the participants in the wine lottery */
 
 const Participants = () => {
     const [participant, setParticipant] = useState([])
@@ -20,6 +21,7 @@ const Participants = () => {
 
 
     return (
+        /**A table to display all the participants in a table */
         <Container>
             <h1>Deltagere i vin lotteriet</h1>
             <Table striped bordered hover>
