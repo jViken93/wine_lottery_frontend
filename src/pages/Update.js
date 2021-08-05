@@ -4,10 +4,12 @@ import Table  from "react-bootstrap/Table";
 import Container  from "react-bootstrap/Container";
 import Button from 'react-bootstrap/Button';
 
-/**Participants class to get all the participants in the wine lottery */
+/**Update class to get all the participants in the wine lottery */
 
-const Participants = () => {
+const Update = () => {
     const [participant, setParticipant] = useState([])
+
+    const [isPending, setIsPending] = useState(false)
 
     //Get all the participants of the competition
 
@@ -20,7 +22,20 @@ const Participants = () => {
             )
       },[])
 
+    //Delete a participant
+    const deleteParticipant = (id) => {
 
+        setIsPending(true);
+
+        fetch('http://127.0.0.1:8000/LotteryRegistration/' + id,{
+            method: 'DELETE',
+            headers: { 'Accept': 'application/json',
+            'Content-Type': 'application/json'}
+        }).then(() => {
+            console.log('User was successfully deleted');
+            setIsPending(false);
+        })
+    }
     return (
         /**A table to display all the participants in a table */
         <Container>
@@ -34,6 +49,7 @@ const Participants = () => {
                     <th>Email</th>
                     <th>Billeter kjøpt</th>
                     <th>ID</th>
+                    <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +60,9 @@ const Participants = () => {
                             <td>{item.email}</td>
                             <td>{item.tickets_to_buy}</td>
                             <td>{item.id}</td>
+                            <td>
+                                <Button onClick={() => deleteParticipant(item.id)}>Delete</Button>
+                            </td>
                         </tr>
                         )}
                 </tbody>
@@ -55,4 +74,4 @@ const Participants = () => {
     )
 }
 
-export default Participants
+export default Update

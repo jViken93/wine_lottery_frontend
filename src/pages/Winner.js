@@ -38,6 +38,7 @@ const Winner = () => {
                 <h3>{data.Winner}</h3>
             </div>
             <br/>
+            {winners.length ?(
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -54,6 +55,9 @@ const Winner = () => {
                         )}
                 </tbody>
             </Table>
+            ) : (
+                <h1>Ingen vinner er trukket</h1>
+            )}
         </Container>
     )
 }

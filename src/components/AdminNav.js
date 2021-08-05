@@ -6,21 +6,21 @@ import {Nav} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
 
 
-const Navigator = () => {
+const AdminNav = () => {
     return (
         <Navbar bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="#home">Vin-lotteri</Navbar.Brand>
+                <Navbar.Brand href="#home">Admin</Navbar.Brand>
                 <Nav>
-                    <LinkContainer to="/">
-                    <Nav.Link>Registrer</Nav.Link>
+                    <LinkContainer to="update">
+                    <Nav.Link>Oppdater</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="participants">
-                    <Nav.Link>Deltagere</Nav.Link>
+                    <LinkContainer to="winner">
+                    <Nav.Link>Trekk Vinner</Nav.Link>
                     </LinkContainer>
                 </Nav>
             </Container>
         </Navbar>
     )
 }
-export default Navigator
+export default AdminNav
